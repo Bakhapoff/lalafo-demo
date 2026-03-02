@@ -11,8 +11,8 @@ public class WebConfig {
     @Bean
     public RestTemplate restTemplate() {
         SimpleClientHttpRequestFactory simpleClientHttpRequestFactory = new SimpleClientHttpRequestFactory();
-        simpleClientHttpRequestFactory.setConnectTimeout(1000);
-        simpleClientHttpRequestFactory.setReadTimeout(1000);
+        simpleClientHttpRequestFactory.setConnectTimeout(2000);
+        simpleClientHttpRequestFactory.setReadTimeout(2000);
         return new RestTemplate(simpleClientHttpRequestFactory);
     }
 

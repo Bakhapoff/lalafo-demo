@@ -4,5 +4,5 @@ import com.bektur.bakhapov.lalafo.payload.response.ad.AdsPageResponse;
 
 public interface LalafoApiService {
 
-    AdsPageResponse fetchAds();
+    AdsPageResponse fetchAds(Integer page);
 }

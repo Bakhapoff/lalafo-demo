@@ -53,8 +53,8 @@ public record AdResponse(
         Integer price_type,
         String ad_label,
         List<AdParamResponse> params,
-        Integer national_price,
-        Integer national_old_price,
+        Object national_price,
+        Object national_old_price,
         Boolean is_identity,
         String url
 ) {
