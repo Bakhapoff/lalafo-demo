@@ -8,3 +8,4 @@ server:
 lalafo:
   api:
     url: ${LALAFO_API_URL}
+    params: ${LALAFO_API_PARAMS}
