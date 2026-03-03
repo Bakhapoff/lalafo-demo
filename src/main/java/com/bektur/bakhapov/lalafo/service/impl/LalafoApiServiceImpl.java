@@ -10,8 +10,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.ResourceAccessException;
 import org.springframework.web.client.RestTemplate;
 
-import java.util.Random;
-
 @Service
 public class LalafoApiServiceImpl implements LalafoApiService {
 
@@ -24,9 +22,6 @@ public class LalafoApiServiceImpl implements LalafoApiService {
     private static final String LANGUAGE = "language";
     private static final String COUNTRY_ID = "country-id";
     private static final String DEVICE = "device";
-
-    private static final long MIN_RANGE = 1_000_000_000_0000L;
-    private static final long MAX_RANGE = 9_000_000_000_0000L;
 
     private final RestTemplate restTemplate;
 
@@ -43,11 +38,8 @@ public class LalafoApiServiceImpl implements LalafoApiService {
 
         HttpEntity<Void> requestEntity = new HttpEntity<>(headers);
 
-        Random random = new Random();
-        long number = MIN_RANGE + (long) (random.nextDouble() * MAX_RANGE);
-
         try {
-            return restTemplate.exchange( LALAFO_API_URL + page + LALAFO_API_PARAMS + number,
+            return restTemplate.exchange( LALAFO_API_URL + page + LALAFO_API_PARAMS,
                     HttpMethod.GET,
                     requestEntity,
                     AdsPageResponse.class).getBody();
